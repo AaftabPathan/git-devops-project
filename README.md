@@ -77,6 +77,35 @@ git log --oneline
 
 ---
 
+🔄 Continuous Integration (GitHub Actions)
+
+This project uses GitHub Actions to implement Continuous Integration (CI) for automated validation of code changes.
+
+CI Workflow Highlights
+
+CI pipeline runs automatically on every push and pull request
+
+Pipeline is triggered for both main and dev branches
+
+Uses GitHub-hosted Ubuntu runner to execute jobs
+
+Automatically checks out source code and validates project files
+
+CI status is visible in the GitHub Actions tab and Pull Requests
+
+CI Configuration File
+.github/workflows/ci.yml
+
+Why CI is Used in This Project
+
+Ensures code stability before merging
+
+Prevents broken code from reaching production branch
+
+Automates verification without manual effort
+
+Follows real-world DevOps CI best practices
+
 ## 📄 Sample Project File
 
 **index.html**
