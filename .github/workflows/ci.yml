@@ -1,0 +1,36 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    name: Build & Test Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify repository files
+        run: |
+          echo "Listing project files"
+          ls -la
+
+      - name: HTML syntax check (basic)
+        run: |
+          if grep -i "<html" index.html; then
+            echo "HTML file looks valid"
+          else
+            echo "HTML tag not found" && exit 1
+          fi
+
+      - name: CI success message
+        run: echo "CI Pipeline executed successfully 🚀"
